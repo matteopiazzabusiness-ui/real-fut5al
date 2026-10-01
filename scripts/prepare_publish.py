@@ -2,7 +2,7 @@ from pathlib import Path
 from shutil import copy2
 import re,json
 root=Path(__file__).resolve().parents[1]
-public=root/'public'
+public=root/'out'
 public.mkdir(exist_ok=True)
 files=set()
 for p in root.glob('*.html'):
@@ -22,6 +22,6 @@ for rel in files:
     copy2(src,dst)
 manifest=root/'.openai/hosting.json'
 data=json.loads(manifest.read_text(encoding='utf-8'))
-data['static']={'directory':'public'}
+data['static']={'directory':'out'}
 manifest.write_text(json.dumps(data,indent=2)+'\n',encoding='utf-8')
 print(f'Prepared {len(files)} public files')
