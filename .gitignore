@@ -1,0 +1,8 @@
+.tmp/
+.claude/
+.agents/
+.codex/
+node_modules/
+*.tar.gz
+*.tar
+__pycache__/
