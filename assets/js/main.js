@@ -12,42 +12,44 @@ addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', scrollY > 20);
 });
 
-/* ---------- WOW: gold particle canvas in hero ---------- */
+/* ---------- WOW: gold particle canvas on every cinematic hero ---------- */
 (function(){
-  const host = document.querySelector('.hero');
-  if (!host || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const canvas = document.createElement('canvas');
-  canvas.id = 'heroFx';
-  host.insertBefore(canvas, host.querySelector('.wrap'));
-  const ctx = canvas.getContext('2d');
-  let w, h, particles;
-  function resize(){
-    w = canvas.width = host.offsetWidth;
-    h = canvas.height = host.offsetHeight;
-    const n = Math.min(70, Math.floor(w / 18));
-    particles = Array.from({ length: n }, () => ({
-      x: Math.random() * w, y: Math.random() * h,
-      r: Math.random() * 1.8 + 0.4,
-      vy: -(Math.random() * 0.35 + 0.08),
-      vx: (Math.random() - 0.5) * 0.15,
-      a: Math.random() * 0.5 + 0.15
-    }));
-  }
-  resize();
-  addEventListener('resize', resize);
-  function tick(){
-    ctx.clearRect(0, 0, w, h);
-    ctx.fillStyle = '#d4af37';
-    for (const p of particles) {
-      p.y += p.vy; p.x += p.vx;
-      if (p.y < -5) { p.y = h + 5; p.x = Math.random() * w; }
-      ctx.globalAlpha = p.a;
-      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('.hero, .page-hero.shot, .player-hero').forEach(host => {
+    const canvas = document.createElement('canvas');
+    canvas.className = 'heroFx';
+    const anchor = host.querySelector('.wrap') || host.firstChild;
+    host.insertBefore(canvas, anchor);
+    const ctx = canvas.getContext('2d');
+    let w, h, particles;
+    function resize(){
+      w = canvas.width = host.offsetWidth;
+      h = canvas.height = host.offsetHeight;
+      const n = Math.min(60, Math.floor(w / 20));
+      particles = Array.from({ length: n }, () => ({
+        x: Math.random() * w, y: Math.random() * h,
+        r: Math.random() * 1.8 + 0.4,
+        vy: -(Math.random() * 0.35 + 0.08),
+        vx: (Math.random() - 0.5) * 0.15,
+        a: Math.random() * 0.5 + 0.15
+      }));
     }
-    ctx.globalAlpha = 1;
+    resize();
+    addEventListener('resize', resize);
+    function tick(){
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = '#d4af37';
+      for (const p of particles) {
+        p.y += p.vy; p.x += p.vx;
+        if (p.y < -5) { p.y = h + 5; p.x = Math.random() * w; }
+        ctx.globalAlpha = p.a;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+      requestAnimationFrame(tick);
+    }
     requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
+  });
 })();
 
 /* ---------- WOW: magnetic buttons ---------- */
@@ -235,6 +237,23 @@ window.addEventListener('load', () => {
     gsap.fromTo('.champ .trophy', { scale: 0.82, rotate: -3, opacity: 0.4 },
       { scale: 1, rotate: 0, opacity: 1, ease: 'none',
         scrollTrigger: { trigger: '.champ', start: 'top 85%', end: 'top 25%', scrub: true } });
+  }
+
+  // WOW: feature photos (squadra, palmares, contatti) grow into view on every page
+  gsap.utils.toArray('.feature .ph.clip img').forEach(img => {
+    gsap.fromTo(img, { scale: 1.22 }, { scale: 1.04, ease: 'none',
+      scrollTrigger: { trigger: img, start: 'top 90%', end: 'top 20%', scrub: true } });
+  });
+
+  // WOW: player hero number pops in
+  if (document.querySelector('.player-hero .pnum')) {
+    gsap.from('.player-hero .pnum', { scale: 0.5, opacity: 0, duration: 1, ease: 'back.out(1.7)', delay: 0.3 });
+    gsap.from('.player-hero .pinfo', { x: -20, opacity: 0, duration: 0.9, delay: 0.5, ease: 'power3.out' });
+  }
+
+  // WOW: page-hero.shot background zoom-out on load (cinematic settle)
+  if (document.querySelector('.page-hero.shot .ph img')) {
+    gsap.fromTo('.page-hero.shot .ph img', { scale: 1.25 }, { scale: 1.08, duration: 1.6, ease: 'power2.out' });
   }
 
   // WOW: hub cards rise with slight 3D on scroll
