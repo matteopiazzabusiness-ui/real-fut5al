@@ -8,11 +8,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=restored">
+<link rel="stylesheet" href="assets/css/style.css?v=a2f83ef2ede0">
 <link rel="icon" href="assets/img/logo-dark.jpeg">
 </head>
 <body>
+<a class="skip-link" href="#main">Vai al contenuto</a>
 
+<div id="curtain"><div class="cu"><img src="assets/img/logo-dark.jpeg" alt="Real Fut5al"><div class="loadbar"><i></i></div><div class="nm">REAL FUT5AL</div></div></div>
 <div class="progress"></div>
 <div class="mesh"><span class="m1"></span><span class="m2"></span><span class="m3"></span></div>
 <div class="grain"></div>
@@ -20,10 +22,10 @@
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="index.html?v=restored"><img src="assets/img/logo-dark.jpeg" alt="Real Fut5al"><span>REAL FUT5AL<small>TRAPANI · FSSI</small></span></a>
+    <a class="brand" href="index.html?v=a2f83ef2ede0"><img src="assets/img/logo-dark.jpeg" alt="Real Fut5al"><span>REAL FUT5AL<small>TRAPANI · FSSI</small></span></a>
     <nav class="links">
-      <a href="index.html?v=restored">Home</a><a href="squadra.html?v=restored">Squadra</a>
-      <a href="palmares.html?v=restored" class="active">Palmarès</a><a href="news.html?v=restored">News</a><a href="contatti.html?v=restored">Contatti</a>
+      <a href="index.html?v=a2f83ef2ede0">Home</a><a href="squadra.html?v=a2f83ef2ede0">Squadra</a>
+      <a href="calendario.html?v=a2f83ef2ede0">Calendario</a><a href="risultati.html?v=a2f83ef2ede0">Risultati</a><a href="palmares.html?v=a2f83ef2ede0" class="active" aria-current="page">Palmarès</a><a href="news.html?v=a2f83ef2ede0">News</a><a href="contatti.html?v=a2f83ef2ede0">Contatti</a>
     </nav>
     <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
@@ -45,27 +47,43 @@
   </div></div>
 </header>
 
-<section class="page-hero">
+<section class="page-hero shot" id="main">
+  <div class="ph"><img data-parallax="12" src="assets/img/poster-siamo-tornati.jpeg" alt=""></div>
   <div class="wrap">
-    <p class="eyebrow">Onori & Storia</p>
+    <span class="kick"><span class="dot"></span> Onori &amp; Storia</span>
     <h1>Palmarès</h1>
-    <p>Dalla fondazione al tetto d'Europa. La storia di un club che ha portato Trapani sul palcoscenico internazionale del futsal sordi.</p>
+    <p>Dal nulla al tetto d'Europa. La storia di un club che ha portato Trapani sul palcoscenico internazionale del futsal sordi.</p>
   </div>
 </section>
 
-<section style="padding-top:20px">
+<!-- trophies -->
+<section class="solid">
   <div class="wrap">
-    <div class="grid g3">
-      <div class="card reveal" style="text-align:center"><div class="num" style="font-size:2.6rem;font-weight:800;color:var(--gold)">1ª</div><h3 style="margin-top:8px">Deaf Champions League</h3><p>Prima edizione, 2026 — finale vinta contro l'Huelva a Montesilvano.</p></div>
-      <div class="card reveal" style="text-align:center"><div class="num" style="font-size:2.6rem;font-weight:800;color:var(--gold)">★</div><h3 style="margin-top:8px">Coppa Italia FSSI</h3><p>Bis in Coppa Italia sordi conquistato ad Aversa.</p></div>
-      <div class="card reveal" style="text-align:center"><div class="num" style="font-size:2.6rem;font-weight:800;color:var(--gold)">◎</div><h3 style="margin-top:8px">Scudetto FSSI</h3><p>L'obiettivo mai raggiunto: il primo tricolore della storia del club.</p></div>
+    <div class="sec-head reveal"><p class="eyebrow">La bacheca</p><h2>I trofei.</h2></div>
+    <div class="grid g3" data-stagger>
+      <div class="card tilt" style="text-align:center"><div class="num" style="font-size:2.8rem;font-weight:900;color:var(--gold)">1ª</div><h3 style="margin-top:8px">Deaf Champions League</h3><p>Prima edizione, 2026 — finale vinta contro l'Huelva a Montesilvano.</p></div>
+      <div class="card tilt" style="text-align:center"><div class="num" style="font-size:2.8rem;font-weight:900;color:var(--gold)">2×</div><h3 style="margin-top:8px">Coppa Italia FSSI</h3><p>Bis in Coppa Italia sordi, conquistata ad Aversa.</p></div>
+      <div class="card tilt" style="text-align:center"><div class="num" style="font-size:2.8rem;font-weight:900;color:var(--gold)">◎</div><h3 style="margin-top:8px">Scudetto FSSI</h3><p>L'obiettivo mai raggiunto: il primo tricolore della storia.</p></div>
     </div>
   </div>
 </section>
 
-<section style="padding-top:0">
+<!-- champions feature -->
+<section class="light" style="padding:0">
+  <div class="feature rev">
+    <div class="tx">
+      <p class="eyebrow">17 Gennaio 2026 · Montesilvano</p>
+      <h2>Il trofeo che ha cambiato tutto.</h2>
+      <p style="margin:18px 0">La prima Deaf Champions League della storia. In finale gli spagnoli dell'Huelva. Real Fut5al non trema e porta la coppa a Trapani: da quel giorno il club è il riferimento europeo del futsal sordi.</p>
+      <div class="fssi-badge" style="background:#fff;border-color:rgba(11,22,35,.1)"><img src="assets/img/partners/fssi.png" alt="FSSI"><div><b style="color:#0b1623">Campioni d'Europa</b><span style="color:#64748b">FSSI · Deaf Champions League</span></div></div>
+    </div>
+    <div class="ph clip"><img data-parallax="-8" src="assets/img/esultanza-palestra.png" alt="Campioni d'Europa 2026"></div>
+  </div>
+</section>
+
+<section class="light">
   <div class="wrap">
-    <div class="sec-head center reveal"><p class="eyebrow">La cronologia</p><h2>Le tappe del cammino</h2></div>
+    <div class="sec-head center reveal"><p class="eyebrow">La cronologia</p><h2>Le tappe del cammino.</h2></div>
     <div class="timeline">
       <div class="tl reveal"><time>17 Gennaio 2026</time><h3>Campioni d'Europa</h3><p>Real Fut5al conquista la prima Deaf Champions League della storia, battendo in finale gli spagnoli dell'Huelva a Montesilvano.</p></div>
       <div class="tl reveal"><time>Aprile 2026</time><h3>Bis in Coppa Italia FSSI</h3><p>Ad Aversa il club alza nuovamente la Coppa Italia sordi, confermandosi ai vertici nazionali.</p></div>
@@ -80,7 +98,7 @@
   <div class="wrap"><div class="strip reveal">
     <h2>La storia continua.</h2>
     <p>Segui il club verso il primo Scudetto FSSI e la difesa del titolo europeo.</p>
-    <a class="btn" href="news.html?v=restored">Ultime news</a>
+    <a class="btn" href="news.html?v=a2f83ef2ede0">Ultime news</a>
   </div></div>
 </section>
 
@@ -90,14 +108,15 @@
       <div style="display:flex;align-items:center;gap:12px"><img src="assets/img/logo-dark.jpeg" alt="" style="width:44px;height:44px;border-radius:50%"><span style="font-weight:800">REAL FUT5AL<small style="display:block;font-size:.62rem;letter-spacing:.3em;color:var(--muted)">TRAPANI · FSSI</small></span></div>
       <p>ASD Real Fut5al — futsal per sordi. Campioni d'Europa, orgoglio di Trapani e della Sicilia.</p>
     </div>
-    <div><h4>Naviga</h4><a href="index.html?v=restored">Home</a><a href="squadra.html?v=restored">Squadra</a><a href="palmares.html?v=restored">Palmarès</a><a href="news.html?v=restored">News</a><a href="contatti.html?v=restored">Contatti</a></div>
-    <div><h4>Contatti</h4><a href="contatti.html?v=restored">Trapani, Sicilia</a><a href="mailto:info@realfut5al.it">info@realfut5al.it</a><a href="https://www.fssi.it" target="_blank" rel="noopener">FSSI.it</a></div>
+    <div><h4>Naviga</h4><a href="index.html?v=a2f83ef2ede0">Home</a><a href="squadra.html?v=a2f83ef2ede0">Squadra</a><a href="calendario.html?v=a2f83ef2ede0">Calendario</a><a href="risultati.html?v=a2f83ef2ede0">Risultati</a><a href="palmares.html?v=a2f83ef2ede0">Palmarès</a><a href="news.html?v=a2f83ef2ede0">News</a><a href="contatti.html?v=a2f83ef2ede0">Contatti</a></div>
+    <div><h4>Contatti</h4><a href="contatti.html?v=a2f83ef2ede0">Trapani, Sicilia</a><a href="mailto:info@realfut5al.it">info@realfut5al.it</a><a href="https://www.fssi.it" target="_blank" rel="noopener">FSSI.it</a></div>
   </div>
   <div class="ft-bottom"><span>© 2026 ASD Real Fut5al. Tutti i diritti riservati.</span><span>Siamo Tornati · 2026/2027</span></div>
 </div></footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="assets/js/main.js?v=restored"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="assets/js/main.js?v=a2f83ef2ede0"></script>
 </body>
 </html>

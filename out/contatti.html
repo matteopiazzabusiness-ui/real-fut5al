@@ -8,11 +8,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=restored">
+<link rel="stylesheet" href="assets/css/style.css?v=a2f83ef2ede0">
 <link rel="icon" href="assets/img/logo-dark.jpeg">
 </head>
 <body>
+<a class="skip-link" href="#main">Vai al contenuto</a>
 
+<div id="curtain"><div class="cu"><img src="assets/img/logo-dark.jpeg" alt="Real Fut5al"><div class="loadbar"><i></i></div><div class="nm">REAL FUT5AL</div></div></div>
 <div class="progress"></div>
 <div class="mesh"><span class="m1"></span><span class="m2"></span><span class="m3"></span></div>
 <div class="grain"></div>
@@ -20,10 +22,10 @@
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="index.html?v=restored"><img src="assets/img/logo-dark.jpeg" alt="Real Fut5al"><span>REAL FUT5AL<small>TRAPANI · FSSI</small></span></a>
+    <a class="brand" href="index.html?v=a2f83ef2ede0"><img src="assets/img/logo-dark.jpeg" alt="Real Fut5al"><span>REAL FUT5AL<small>TRAPANI · FSSI</small></span></a>
     <nav class="links">
-      <a href="index.html?v=restored">Home</a><a href="squadra.html?v=restored">Squadra</a>
-      <a href="palmares.html?v=restored">Palmarès</a><a href="news.html?v=restored">News</a><a href="contatti.html?v=restored" class="active">Contatti</a>
+      <a href="index.html?v=a2f83ef2ede0">Home</a><a href="squadra.html?v=a2f83ef2ede0">Squadra</a>
+      <a href="calendario.html?v=a2f83ef2ede0">Calendario</a><a href="risultati.html?v=a2f83ef2ede0">Risultati</a><a href="palmares.html?v=a2f83ef2ede0">Palmarès</a><a href="news.html?v=a2f83ef2ede0">News</a><a href="contatti.html?v=a2f83ef2ede0" class="active" aria-current="page">Contatti</a>
     </nav>
     <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
@@ -45,15 +47,16 @@
   </div></div>
 </header>
 
-<section class="page-hero">
+<section class="page-hero shot" id="main">
+  <div class="ph"><img data-parallax="12" src="assets/img/jersey-crest.jpeg" alt=""></div>
   <div class="wrap">
-    <p class="eyebrow">Parliamone</p>
+    <span class="kick"><span class="dot"></span> Parliamone</span>
     <h1>Contatti</h1>
     <p>Informazioni, collaborazioni, sponsorizzazioni o tesseramenti: siamo a disposizione.</p>
   </div>
 </section>
 
-<section style="padding-top:20px">
+<section class="light">
   <div class="wrap">
     <div class="split" style="align-items:start">
       <div class="reveal">
@@ -61,10 +64,10 @@
         <h2>ASD Real Fut5al</h2>
         <p style="margin:16px 0 34px">Società di futsal per sordi affiliata alla FSSI, con base a Trapani.</p>
         <ul class="info-list">
-          <li><div class="ico">⌖</div><div><b>Sede</b><span>Trapani, Sicilia — Italia</span></div></li>
-          <li><div class="ico">✉</div><div><b>Email</b><span>info@realfut5al.it</span></div></li>
-          <li><div class="ico">⚑</div><div><b>Federazione</b><span>FSSI — Federazione Sport Sordi Italia</span></div></li>
-          <li><div class="ico">♛</div><div><b>Stagione</b><span>2026/2027 — «Siamo Tornati»</span></div></li>
+          <li><div class="ico"><svg class="svi" viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div><b>Sede</b><span>Trapani, Sicilia — Italia</span></div></li>
+          <li><div class="ico"><svg class="svi" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><div><b>Email</b><span>info@realfut5al.it</span></div></li>
+          <li><div class="ico"><svg class="svi" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/></svg></div><div><b>Federazione</b><span>FSSI — Federazione Sport Sordi Italia</span></div></li>
+          <li><div class="ico"><svg class="svi" viewBox="0 0 24 24"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z"/><path d="M7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3M9 17h6M10 13.5V17M14 13.5V17M8 21h8"/></svg></div><div><b>Stagione</b><span>2026/2027 — «Siamo Tornati»</span></div></li>
         </ul>
       </div>
 
@@ -85,20 +88,36 @@
   </div>
 </section>
 
+<!-- map + info -->
+<section class="solid">
+  <div class="wrap">
+    <div class="sec-head reveal"><p class="eyebrow">La casa dei campioni</p><h2>A Trapani, nel cuore della Sicilia.</h2></div>
+    <div class="map reveal-sc">
+      <div class="pin"><span class="dot"></span><b>Real Fut5al</b><span>Trapani · Sicilia</span></div>
+    </div>
+    <div class="info-cards" data-stagger>
+      <div class="card tilt"><div class="ico"><svg class="svi" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Allenamenti</h3><p>Sedute settimanali in palestra. Calendario gare FSSI e Deaf Champions League comunicato sui canali ufficiali.</p></div>
+      <div class="card tilt"><div class="ico"><svg class="svi" viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="m8.2 10.8 7.6-4.4M8.2 13.2l7.6 4.4"/></svg></div><h3>Seguici</h3><p>Aggiornamenti, dietro le quinte e highlight delle partite sui profili social del club.</p></div>
+      <div class="card tilt"><div class="ico"><svg class="svi" viewBox="0 0 24 24"><path d="M3 7l4 4 5-6 5 6 4-4v10H3V7Z"/></svg></div><h3>Diventa partner</h3><p>Lega il tuo brand ai campioni d'Europa del futsal sordi. Scrivici per il kit sponsor 2026/2027.</p></div>
+    </div>
+  </div>
+</section>
+
 <footer class="ft"><div class="wrap">
   <div class="ft-grid">
     <div class="brand" style="display:block">
       <div style="display:flex;align-items:center;gap:12px"><img src="assets/img/logo-dark.jpeg" alt="" style="width:44px;height:44px;border-radius:50%"><span style="font-weight:800">REAL FUT5AL<small style="display:block;font-size:.62rem;letter-spacing:.3em;color:var(--muted)">TRAPANI · FSSI</small></span></div>
       <p>ASD Real Fut5al — futsal per sordi. Campioni d'Europa, orgoglio di Trapani e della Sicilia.</p>
     </div>
-    <div><h4>Naviga</h4><a href="index.html?v=restored">Home</a><a href="squadra.html?v=restored">Squadra</a><a href="palmares.html?v=restored">Palmarès</a><a href="news.html?v=restored">News</a><a href="contatti.html?v=restored">Contatti</a></div>
-    <div><h4>Contatti</h4><a href="contatti.html?v=restored">Trapani, Sicilia</a><a href="mailto:info@realfut5al.it">info@realfut5al.it</a><a href="https://www.fssi.it" target="_blank" rel="noopener">FSSI.it</a></div>
+    <div><h4>Naviga</h4><a href="index.html?v=a2f83ef2ede0">Home</a><a href="squadra.html?v=a2f83ef2ede0">Squadra</a><a href="calendario.html?v=a2f83ef2ede0">Calendario</a><a href="risultati.html?v=a2f83ef2ede0">Risultati</a><a href="palmares.html?v=a2f83ef2ede0">Palmarès</a><a href="news.html?v=a2f83ef2ede0">News</a><a href="contatti.html?v=a2f83ef2ede0">Contatti</a></div>
+    <div><h4>Contatti</h4><a href="contatti.html?v=a2f83ef2ede0">Trapani, Sicilia</a><a href="mailto:info@realfut5al.it">info@realfut5al.it</a><a href="https://www.fssi.it" target="_blank" rel="noopener">FSSI.it</a></div>
   </div>
   <div class="ft-bottom"><span>© 2026 ASD Real Fut5al. Tutti i diritti riservati.</span><span>Siamo Tornati · 2026/2027</span></div>
 </div></footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="assets/js/main.js?v=restored"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="assets/js/main.js?v=a2f83ef2ede0"></script>
 </body>
 </html>

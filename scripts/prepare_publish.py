@@ -1,6 +1,6 @@
 from pathlib import Path
 from shutil import copy2
-import re,json
+import re,json,hashlib
 root=Path(__file__).resolve().parents[1]
 public=root/'out'
 public.mkdir(exist_ok=True)
@@ -20,6 +20,10 @@ for rel in files:
     dst=public/rel
     dst.parent.mkdir(parents=True,exist_ok=True)
     copy2(src,dst)
+# Refresh cached pages and assets together when publishing a new snapshot.
+revision=hashlib.sha256(b''.join((root/rel).read_bytes() for rel in sorted(files))).hexdigest()[:12]
+for page in public.glob('*.html'):
+    page.write_text(page.read_text(encoding='utf-8').replace('?v=restored',f'?v={revision}'),encoding='utf-8')
 manifest=root/'.openai/hosting.json'
 data=json.loads(manifest.read_text(encoding='utf-8'))
 data['static']={'directory':'out'}
