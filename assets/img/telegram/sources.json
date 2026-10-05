@@ -220,10 +220,13 @@
   ],
   "foundation": {
     "event_date": "2023-09-21",
-    "city": "Trapani",
     "founder": "Luca Toniolo",
     "source": "https://t.me/asdrealfut5al/3"
   },
   "staff_2025_26_source": "https://t.me/asdrealfut5al/820",
-  "roster_2025_26_source": "https://t.me/asdrealfut5al/822"
+  "roster_2025_26_source": "https://t.me/asdrealfut5al/822",
+  "club_location": {
+    "city": "Lido di Noto",
+    "confirmed_by": "user"
+  }
 }
