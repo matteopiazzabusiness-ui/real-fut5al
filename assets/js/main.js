@@ -215,7 +215,7 @@ window.addEventListener('load', () => {
   if (!window.ScrollTrigger) return;
 
   // hero parallax zoom
-  gsap.to('.hero-bg img', { yPercent: 18, scale: 1.0, ease: 'none',
+  gsap.to('.hero:not(.hero-group) .hero-bg img', { yPercent: 18, scale: 1.0, ease: 'none',
     scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
 
   // generic parallax for [data-parallax]
