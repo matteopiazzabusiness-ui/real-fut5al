@@ -930,3 +930,5 @@ ul.albo .md{font-size:1.25rem;line-height:1;flex:0 0 auto}
 .medagliere .mt b{font-size:2.6rem;font-weight:900;line-height:1}
 .medagliere .mt span{font-size:.85rem;letter-spacing:.08em;color:var(--muted)}
 .medagliere .mnote{flex-basis:100%;max-width:620px;margin:8px auto 0;text-align:center;color:var(--silver-2)}
+
+#una-vita-a-cinque .news-hero:hover .img img{transform:none}
