@@ -328,7 +328,7 @@ body{opacity:1}
 .spon .role{font-size:.64rem;text-transform:uppercase;letter-spacing:.2em;color:var(--muted)}
 
 /* ===== HEADER SPONSOR TICKER (thin loop strip under menu) ===== */
-:root{--navh:116px}
+:root{--navh:66px}
 .nav .wrap{height:66px}
 .ticker{height:50px;border-top:1px solid var(--line);overflow:hidden;position:relative;
   background:linear-gradient(90deg,rgba(23,23,28,.6),rgba(10,10,12,.3))}
@@ -349,7 +349,7 @@ body{opacity:1}
 .ticker .sep{color:var(--line)}
 /* offset fixed header */
 .hero{padding-top:var(--navh)}
-@media(max-width:860px){:root{--navh:116px}}
+@media(max-width:860px){:root{--navh:66px}}
 @media(prefers-reduced-motion:reduce){.ticker .run{animation:none}}
 
 /* ===== FULL-BLEED CINEMATIC EXPERIENCE BAND ===== */
