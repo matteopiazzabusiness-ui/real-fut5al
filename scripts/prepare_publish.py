@@ -5,6 +5,8 @@ root=Path(__file__).resolve().parents[1]
 public=root/'out'
 public.mkdir(exist_ok=True)
 files=set()
+if (root / "CNAME").exists():
+    files.add("CNAME")
 for p in root.glob('*.html'):
     text=p.read_text(encoding='utf-8')
     files.add(p.name)
