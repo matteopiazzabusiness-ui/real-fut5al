@@ -1,8 +1,28 @@
+/* ---------- persistent reading preferences ---------- */
+let readingPrefs = {};
+try { readingPrefs = JSON.parse(localStorage.getItem('real-reading') || '{}'); } catch (_) {}
+function applyReadingPrefs() {
+  document.documentElement.classList.toggle('large-text', !!readingPrefs.large);
+  document.documentElement.classList.toggle('quiet-reading', !!readingPrefs.quiet);
+  if (readingPrefs.quiet) window.realLenis?.destroy();
+}
+applyReadingPrefs();
+for (const [id,key] of [['largeText','large'],['stopMotion','quiet']]) {
+  const input = document.getElementById(id);
+  if (!input) continue;
+  input.checked = !!readingPrefs[key];
+  input.addEventListener('change', () => {
+    readingPrefs[key] = input.checked;
+    try { localStorage.setItem('real-reading', JSON.stringify(readingPrefs)); } catch (_) {}
+    applyReadingPrefs();
+  });
+}
+
 /* ---------- mobile nav ---------- */
 const burger = document.querySelector('.burger');
 const links = document.querySelector('nav.links');
-if (burger) burger.addEventListener('click', () => links.classList.toggle('open'));
-links && links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+if (burger && links) burger.addEventListener('click', () => { const open = links.classList.toggle('open'); burger.setAttribute('aria-expanded', String(open)); burger.setAttribute('aria-label', open ? 'Chiudi menu' : 'Apri menu'); });
+links && links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { links.classList.remove('open'); burger?.setAttribute('aria-expanded', 'false'); burger?.setAttribute('aria-label', 'Apri menu'); }));
 
 /* ---------- nav shadow + blur intensify ---------- */
 const nav = document.querySelector('header.nav');
@@ -180,18 +200,28 @@ document.querySelectorAll('.tilt').forEach(card => {
   card.addEventListener('mouseleave', () => card.style.transform = '');
 });
 
-/* ---------- contact form demo ---------- */
+/* ---------- written contact: prepare an email, never claim delivery ---------- */
 const form = document.querySelector('#contactForm');
 if (form) form.addEventListener('submit', (e) => {
   e.preventDefault();
-  const ok = document.querySelector('#formMsg');
-  ok.textContent = 'Grazie! Messaggio inviato. Ti ricontatteremo a breve. (demo)';
-  ok.style.color = 'var(--gold)';
-  form.reset();
+  const name = document.querySelector('#contactName').value.trim();
+  const email = document.querySelector('#contactEmail').value.trim();
+  const subject = document.querySelector('#contactSubject').value.trim() || 'Informazioni Real Fut5al';
+  const message = document.querySelector('#contactMessage').value.trim();
+  const body = message + '\n\nNome: ' + name + '\nEmail per la risposta: ' + email;
+  const url = 'mailto:info@realfut5al.it?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  const status = document.querySelector('#formMsg');
+  status.textContent = 'La bozza deve essere inviata dalla tua app email. Se non si apre, scrivi a info@realfut5al.it e copia il messaggio qui sopra.';
+  window.location.href = url;
 });
 
 /* ---------- GSAP (progressive enhancement, loaded via CDN) ---------- */
 window.addEventListener('load', () => {
+  if (readingPrefs.quiet || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.hero .word i, .reveal, .reveal-sc').forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
+    document.getElementById('curtain')?.remove();
+    return;
+  }
   if (!window.gsap) {
     // fallback: no CDN — show hero words, no animation lib
     document.querySelectorAll('.hero .word i').forEach(i => i.style.transform = 'none');
@@ -202,7 +232,7 @@ window.addEventListener('load', () => {
 
   // Lenis smooth inertial scroll (fires native scroll → reveals keep working)
   if (window.Lenis) {
-    const lenis = new window.Lenis({ duration: 1.15, smoothWheel: true, wheelMultiplier: 1 });
+    const lenis = window.realLenis = new window.Lenis({ duration: 1.15, smoothWheel: true, wheelMultiplier: 1 });
     const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); };
     requestAnimationFrame(raf);
     if (window.ScrollTrigger) lenis.on('scroll', window.ScrollTrigger.update);
